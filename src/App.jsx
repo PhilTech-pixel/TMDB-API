@@ -46,5 +46,3 @@ function App() {
 }
 
 export default App;
-
-//Api Ket 70aa3bb8322809800dc7fe1d5e4e4ea6
