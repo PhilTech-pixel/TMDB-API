@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { use, useEffect, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -11,35 +11,34 @@ function App() {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer //Bearer",
+      Authorization: `Bearer ${import.meta.env.VITE_TMDB_TOKEN}`,
     },
   };
+  useEffect(() => {
+    // Fetch trending movies when the component mounts
+    fetch(url, options)
+      .then((res) => res.json())
+      .then((json) => setMovieList(json.results))
+      .catch((err) => console.error(err));
+  }, []); // Empty dependency array to run only once
 
-  fetch(url, options)
-    .then((response) => response.json())
-    .then((response) => {
-      console.log(response);
-      setMovieList(response.results);
-    })
-    .catch((err) => console.error(err));
+  //create an onClick function to log the movie title when a poster is clicked
+  //create an onClick function to display movie details in a modal when a poster is clicked
 
   return (
     <>
       <div>
-        <h1>Trending Movies</h1>
-        <ul>
+        <h1 className="title">Trending Movies</h1>
+        <div className="movie-list">
           {movieList.map((movie) => (
-            <li key={movie.id}>
-              <h2>{movie.title}</h2>
-              <p>{movie.overview}</p>
-              <img
-                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                alt={movie.title}
-              />
-            </li>
+            <img
+              key={movie.id}
+              className="movie-poster"
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              alt={movie.title}
+            />
           ))}
-        </ul>
+        </div>
       </div>
     </>
   );

@@ -40,3 +40,23 @@
 .read-the-docs {
   color: #888;
 }
+.title {
+  font-size: 2.5em;
+  margin: 0.5em 0;
+}
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.movie-poster {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.movie-poster:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}
