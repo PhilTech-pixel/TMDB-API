@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import MovieList from "./MovieList";
 import MovieDetails from "./MovieDetails";
+import Navigation from "./Navigation";
 
 function App() {
   const [selectedMovieId, setSelectedMovieId] = useState(null);
@@ -14,6 +15,7 @@ function App() {
 
   return (
     <div className="app-container">
+      <Navigation />
       <MovieList onPosterClick={handlePosterClick} />
       <MovieDetails
         movieId={selectedMovieId}
