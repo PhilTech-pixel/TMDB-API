@@ -17,7 +17,7 @@ const Navigation = () => {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Trending Movies</NavigationMenuTrigger>
           <NavigationMenuTrigger>Trending Series</NavigationMenuTrigger>
-          <NavigationMenuTrigger>Recommended</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Account</NavigationMenuTrigger>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
