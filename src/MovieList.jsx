@@ -22,7 +22,7 @@ const MovieList = ({ onPosterClick }) => {
   }, []);
 
   const handleMovieClick = (movie) => {
-    // Fetch IMDb ID for the clicked movie
+    
     const imdbUrl = `https://api.themoviedb.org/3/movie/${movie.id}/external_ids?language=en-US`;
     fetch(imdbUrl, options)
       .then((res) => res.json())
